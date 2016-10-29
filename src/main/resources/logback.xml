@@ -1,0 +1,17 @@
+<configuration debug="false">
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<withJansi>true</withJansi>
+		<encoder>
+			<pattern>
+				<!-- @formatter:off -->
+				${LOG_PATTERN:-%date{HH:mm:ss} %highlight([%-4level]) %cyan([%logger{36}]) %boldBlue(%replace([%marker] ){'^\[\]\ $',''}){}%m%n}
+				<!-- @formatter:on -->
+			</pattern>
+		</encoder>
+	</appender>
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
