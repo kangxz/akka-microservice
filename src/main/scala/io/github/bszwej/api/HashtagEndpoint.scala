@@ -8,7 +8,7 @@ import io.github.bszwej.core.HashtagManagerActor._
 import scala.util.{Failure, Success}
 
 class HashtagEndpoint(hashtagActor: ActorRef) extends BaseEndpoint {
-  // TODO status endpoint with number or timestamp of last aggregation
+
   val route = pathPrefix("hashtags") {
     pathEnd {
       get {

@@ -12,7 +12,7 @@ class TweetCollectorActorTest extends BaseActorTest with OneInstancePerTest{
   val twitterStream = stub[TwitterStream]
   val tweetRepository = stub[TweetRepository]
 
-  "HashtagCollectorActor" should {
+  "TweetCollectorActor" should {
 
     "save a new tweet" in {
       // given
