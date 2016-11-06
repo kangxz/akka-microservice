@@ -6,7 +6,6 @@ import de.heikoseeberger.akkahttpcirce.CirceSupport
 
 trait BaseEndpoint
   extends Directives
-  with JsonSupport
   with CirceSupport
   with LazyLogging
   with EndpointTimeout

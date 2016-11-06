@@ -18,7 +18,7 @@ libraryDependencies ++= {
   val akkaHttpCirceVersion = "1.10.1"
   val twitter4jVersion = "4.0.5"
   val typesafeConfigVersion = "1.3.1"
-  val mongoScalaDriverVersion = "1.1.1"
+  val reactiveMongoVersion = "0.12.0"
   val scalaMockVersion = "3.2.2"
 
   List(
@@ -40,7 +40,7 @@ libraryDependencies ++= {
     "org.twitter4j" % "twitter4j-stream" % twitter4jVersion,
 
     // Mongo
-    "org.mongodb.scala" %% "mongo-scala-driver" % mongoScalaDriverVersion,
+    "org.reactivemongo" %% "reactivemongo" % reactiveMongoVersion,
 
     // Config
     "com.typesafe" % "config" % typesafeConfigVersion,
