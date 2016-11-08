@@ -9,11 +9,15 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with hybris.
  */
-package io.github.bszwej.core.exception
+package done.io.github.bszwej
+
+import com.typesafe.config.ConfigFactory
 
 /**
-  * Represents exceptions from MongoDB.
-  *
-  * @param message of an error
+  * Trait for providing configuration.
   */
-class MongoException(message: String) extends RuntimeException(message)
+trait MainConfig {
+
+  lazy val config = ConfigFactory.load()
+
+}
