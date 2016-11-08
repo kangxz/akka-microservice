@@ -9,15 +9,14 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with hybris.
  */
-package io.github.bszwej.api
+package done.io.github.bszwej.api
 
-class HashtagEndpoint extends BaseEndpoint {
+import akka.util.Timeout
 
-  val route = path("hashtags" / Segment) { hashtag ⇒
-    pathEnd {
-      post {
-        complete("Hashtag added!")
-      }
-    }
-  }
+import scala.concurrent.duration.DurationInt
+
+trait EndpointTimeout {
+
+  implicit val timeout: Timeout = Timeout(3 seconds)
+
 }
