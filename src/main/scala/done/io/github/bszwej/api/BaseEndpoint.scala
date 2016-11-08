@@ -9,11 +9,14 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with hybris.
  */
-package io.github.bszwej.core.exception
+package done.io.github.bszwej.api
 
-/**
-  * Represents exceptions from MongoDB.
-  *
-  * @param message of an error
-  */
-class MongoException(message: String) extends RuntimeException(message)
+import akka.http.scaladsl.server.Directives
+import com.typesafe.scalalogging.LazyLogging
+import de.heikoseeberger.akkahttpcirce.CirceSupport
+
+trait BaseEndpoint
+  extends Directives
+  with CirceSupport
+  with LazyLogging
+  with EndpointTimeout
