@@ -9,14 +9,11 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with hybris.
  */
-package done.io.github.bszwej.api
+package done.io.github.bszwej.exception
 
-import akka.http.scaladsl.server.Directives
-import com.typesafe.scalalogging.LazyLogging
-import de.heikoseeberger.akkahttpcirce.CirceSupport
-
-trait BaseEndpoint
-  extends Directives
-    with CirceSupport
-    with LazyLogging
-    with EndpointTimeout
+/**
+  * Represents write exception from MongoDB.
+  *
+  * @param message of an error
+  */
+class MongoWriteException(message: String) extends RuntimeException(message)

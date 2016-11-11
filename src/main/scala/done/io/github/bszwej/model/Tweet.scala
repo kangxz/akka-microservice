@@ -9,14 +9,13 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with hybris.
  */
-package done.io.github.bszwej.api
+package done.io.github.bszwej.model
 
-import akka.http.scaladsl.server.Directives
-import com.typesafe.scalalogging.LazyLogging
-import de.heikoseeberger.akkahttpcirce.CirceSupport
-
-trait BaseEndpoint
-  extends Directives
-    with CirceSupport
-    with LazyLogging
-    with EndpointTimeout
+/**
+  * Case class representing a tweet.
+  *
+  * @param username of a tweet's author
+  * @param message  of a tweet
+  * @param hashtag  contained in a tweet
+  */
+final case class Tweet(username: String, message: String, hashtag: String)

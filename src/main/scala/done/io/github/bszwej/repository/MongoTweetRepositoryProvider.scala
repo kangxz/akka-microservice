@@ -9,14 +9,14 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with hybris.
  */
-package done.io.github.bszwej.api
+package done.io.github.bszwej.repository
 
-import akka.http.scaladsl.server.Directives
-import com.typesafe.scalalogging.LazyLogging
-import de.heikoseeberger.akkahttpcirce.CirceSupport
+import done.io.github.bszwej.mongo.MongoTweetCollectionProvider
 
-trait BaseEndpoint
-  extends Directives
-    with CirceSupport
-    with LazyLogging
-    with EndpointTimeout
+trait MongoTweetRepositoryProvider {
+
+  import scala.concurrent.ExecutionContext.Implicits.global
+
+  val tweetRepository = new MongoTweetRepository(MongoTweetCollectionProvider.collection)
+
+}

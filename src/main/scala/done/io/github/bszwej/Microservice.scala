@@ -1,13 +1,15 @@
 package done.io.github.bszwej
 
-import akka.actor.{ActorSystem, Props}
+import akka.actor.{ActorRefFactory, ActorSystem, Props}
 import akka.http.scaladsl.Http
-import akka.http.scaladsl.server.Directives
 import akka.stream.ActorMaterializer
 import com.typesafe.scalalogging.LazyLogging
 import done.io.github.bszwej.api.HashtagEndpoint
+import done.io.github.bszwej.mongo.MongoTweetCollectionProvider
+import done.io.github.bszwej.repository.MongoTweetRepository
+import done.io.github.bszwej.twitter.TwitterStreamProvider
 
-object Microservice extends LazyLogging with Directives {
+object Microservice extends LazyLogging with TwitterStreamProvider {
 
   def main(args: Array[String]): Unit = {
     implicit val system = ActorSystem()
