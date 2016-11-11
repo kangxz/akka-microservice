@@ -5,9 +5,9 @@ import done.io.github.bszwej.HashtagManagerActor.{AddHashtag, HashtagAdded}
 
 object HashtagManagerActor {
 
-  final case class AddHashtag(hashtag: String)
+  case class AddHashtag(tagName: String)
 
-  final case object HashtagAdded
+  case class HashtagAdded(tagName: String)
 
 }
 
@@ -15,8 +15,8 @@ class HashtagManagerActor extends Actor with MainConfig {
 
   override def receive: Receive = {
 
-    case AddHashtag(hashtag) ⇒
-      sender() ! HashtagAdded
+    case AddHashtag(tagName) ⇒
+      sender() ! HashtagAdded(tagName)
 
   }
 }
