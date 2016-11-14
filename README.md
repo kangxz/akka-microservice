@@ -16,7 +16,7 @@ This service consists of:
 	- HashtagManagerActor - it spawns a new child (TweetCollectorActor) for each hashtag
 	- TweetCollectorActor - it follows a certain tag and persists tweets with it in MongoDB  
 
-[Draft](akka_http_microservice.png)
+![Draft](akka_http_microservice.png)
 
 ## Prerequisites
 
@@ -42,4 +42,3 @@ This service consists of:
 	```
 
 1. `sbt run`
- 
